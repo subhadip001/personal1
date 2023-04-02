@@ -1,4 +1,3 @@
-import { useAuth } from '@/store/AuthContext'
 import Link from 'next/link'
 import { useContext, useState } from 'react'
 
@@ -6,14 +5,7 @@ function LoginForm() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(false)
-  const { isLoggedIn, login, logout } = useAuth()
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    login(username, password).catch((err) => {
-      console.error(err)
-    })
-  }
 
   return (
     <>
