@@ -1,20 +1,12 @@
-import { useAuth } from '@/store/AuthContext'
 import Link from 'next/link'
 import { useContext, useState } from 'react'
 
 function SignupForm() {
     const [username, setUsername] = useState('')
-    const [email , setEmail] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [confirm , setConfirm] = useState('')
-    const { isLoggedIn, login, logout } = useAuth()
+    const [confirm, setConfirm] = useState('')
 
-    function handleSubmit(e) {
-        e.preventDefault()
-        login(username, password).catch((err) => {
-            console.error(err)
-        })
-    }
 
     return (
         <>
@@ -70,7 +62,7 @@ function SignupForm() {
                     </div>
                     <Link className='w-[90%] mx-auto' href="/login">Already user ? Sign in !</Link>
                 </form>
-                
+
             </div>
         </>
     )

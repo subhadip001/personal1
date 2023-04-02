@@ -1,11 +1,9 @@
 import { useRouter } from 'next/router'
-import { useAuth } from '@/store/AuthContext'
 
 const AuthenticatedComponent = ({ children }) => {
     const router = useRouter()
-    const { isLoggedIn, login, logout } = useAuth()
 
-    if (!isLoggedIn) {
+    if (true) {
         // If the user is not logged in, redirect to the login page.
         router.push('/login')
         return null
